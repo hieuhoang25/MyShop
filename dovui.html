@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đố Vui ! </title>
+    
+    <link rel="stylesheet" href="./css/style_dovui.css">
+    <link rel="stylesheet" href="./font/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div class="nav">
+        <img src="./img/your-logo.png" title="Trang chủ" onclick="location.href='./index.html'" alt="" width="11%">
+        <ul>
+            <li class="sb"><a href="./index.html">Trang chủ</a></li>
+            <li class="sb"><a href="#">Sản phẩm</a></li>
+            <li class="sb"><a href="./news.html">Tin Tức</a></li>
+            <li class="sb"><a href="./dovui.html"style="border-bottom: 2px solid rgba(0, 0, 0, 0.5);">Đố vui</a></li>
+
+            <li class="sbcart">
+                <a href="./cart.html" title="giỏ hàng">
+                    <i class="ti ti-shopping-cart"></i>
+                    
+                </a>
+            </li>
+            <li class="dn">
+                <a href="">ĐĂNG NHẬP</a>
+            </li>
+            <li class="dk">
+                <a style="color: #fff;" href="">ĐĂNG KÝ</a>
+
+            </li>
+        </ul>
+        <span id="sl" class="sl">
+            0
+        </span>
+    </div>
+    <div class="container">
+        <div class="heading">
+            <h3>Giải Phương Trình ax<sup>2</sup>+bx+c = 0</h3>
+            <h4>
+                Số lần giải: <strong id="slg">0</strong> 
+            </h4>
+        </div>
+        <form action="#" name="my_form" >
+            <div class="form-group">
+                <label for="">Hệ số a</label>
+                <br>
+                <input type="number" id="hsa" >
+            </div>
+            <div class="form-group">
+                <label for="">Hệ số b</label>
+                <br>
+                <input type="number" name="" id="hsb">
+            </div>
+            <div class="form-group" >
+                <label for="">Hệ số c</label>
+                <br>
+                <input type="number" name="" id="hsc" onclick="check()">
+            </div>
+            <div class="form-button">
+                <button id="giai" onclick="giai_Pt()"  >Giải PT</button>
+               
+                <button onclick="choSo()" >Cho số</button>
+               
+            </div>
+
+        </form>
+        <div class="result">
+            <p id="result-heading">
+                
+            </p>
+            <p id="result-main">
+
+            </p>
+
+        </div>
+        <div id="tg">
+            <p>
+                 <span id="time"></span>
+            </p>
+        </div>
+    </div>
+    <script src="./js/main.js">
+  
+    </script>
+    <script src="./js/cart.js"></script>
+</body>
+</html>

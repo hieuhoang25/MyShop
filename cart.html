@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="./css/style1.css">
+    <link rel="stylesheet" href="./font/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div class="main">
+        <div class="nav">
+            <img src="./img/your-logo.png" title="Trang chủ" onclick="location.href='./index.html'" alt="" width="11%">
+            <ul>
+                <li class="sb"><a href="./index.html">Trang chủ</a></li>
+                <li class="sb"><a href="#">Sản phẩm</a></li>
+                <li class="sb"><a href="./news.html">Tin Tức</a></li>
+                <li class="sb"><a href="./dovui.html">Đố vui</a></li>
+
+                <li class="sbcart">
+                    <a href="./giohang.html" title="giỏ hàng">
+                        <i class="ti ti-shopping-cart"></i>
+                        
+                    </a>
+                </li>
+                <li class="dn">
+                    <a href="">ĐĂNG NHẬP</a>
+                </li>
+                <li class="dk">
+                    <a style="color: #fff;" href="">ĐĂNG KÝ</a>
+
+                </li>
+            </ul>
+        </div>
+        <div class="taskbar">
+            <i class="icon-home ti-home" onclick="location.href='index.html'"></i>
+            <i class="icon-right ti-angle-right"></i>
+            <span>Giỏ hàng</span>
+        </div>
+      <div class="gio-hang gio-hang-heading">
+
+          <h4>Danh sách sản phẩm</h4>
+          <div class="item-gio-hang">
+           
+              <div class="hinhanh">
+              
+              </div>
+              <p class="ten">Tên sản phẩm</p>
+              <div class="gia">
+                 Giá tiền
+  
+                  
+              </div>
+              <p class="soluong">Số lượng</p>
+              <p class="tongtien">Thành tiền </p>
+              <div class="hanhdong">
+                  <p>Thao tác</p>
+              </div>
+          </div>
+      </div>
+
+
+        <div class="gio-hang" id="items">
+           <div class="alert" id="alert">
+               <img src="./img/mascot@2x.png" alt="" width="100px">
+            <p>
+            Không có sản phẩm nào trong giỏ hàng của bạn.
+
+            </p>
+           </div>
+           
+            
+           
+        </div>
+    <div class="control">
+        <div class="tieptucmuahang">
+            <i class="ti-angle-double-left"></i>
+            <a href="./index.html">Tiếp tục mua hàng</a>
+        </div>
+        <div class="countmoney">
+            <div class="thanhtien">
+                Tạm tính: <strong id="thtien"></strong>
+
+            </div>
+            <div class="vat">
+                (Đã bao gồm VAT)
+            </div>
+            <div class="btndathang">
+                <button id="btndathang" onclick="duaGioHangXuongLocal()">Tiến hành đặt hàng</button>
+            </div>
+        </div>
+        <div class="clean">
+
+        </div>
+    </div>
+
+    </div>
+
+
+    <div class="footer">
+        <div class="sub-info">
+            <div class="shiper">
+                <img src="./img/run.png" alt="">
+                <div class="shiper-text">
+                    <h2>Giao hàng Miễn phí</h2>
+                    <p>Với các đơn hàng từ 
+                        
+                        500.000đ 
+                    trở lên</p>
+                </div>
+            </div>
+            <div class="shiper">
+                <img src="./img/git.png" alt="">
+                <div class="shiper-text">
+                    <h2>Quà tặng & Bao bì</h2>
+                    <p>Chúng tôi có mức giá áp dụng cho gói quà đặc biệt với giá trị tuyệt vời! Tuyệt vời không phải là không đáng tin cậy trong nền kinh tế thị trường tự do. Danh từ bố trí trong danh mục đầu tư, đường kính không phải là không có trong euismod tincidunt.</p>
+                </div>
+            </div>
+        </div>
+        <div class="icon">
+            <div class="iconmain">
+
+                <i class="ti-youtube"></i>
+                <i class="ti-facebook"></i>
+                <i class="ti-instagram"></i>
+                <i class="ti-google"></i>
+            </div>
+            <div class="copyright">
+                Copyrights © 2021 by <strong>Hiếu Laptop</strong>. All rights reserved.
+             </div>
+        </div>
+
+    </div>
+    <script src="./js/cart.js"></script>
+    <script src="./js/products.js"></script>
+    <script src="./js/productclass.js"></script>
+    <script src="./js/checkout.js"></script>
+    <script>
+        var mangdssp=danhsachmuahang;
+        var mangsl=JSON.parse(localStorage.getItem("danhsanpham"));
+        var items=document.getElementById("items");
+        var nf=new Intl.NumberFormat();
+
+        var tongtien=0;
+        for(var i=0;i<mangsl.length;i++){
+            var sp=new Item(mangsl[i].ob, mangsl[i].soluong);
+            sp.showgiohang(items);
+            var ttien=products[sp.ob].price*sp.soluong;
+            tongtien+=ttien;
+        }
+        document.getElementById("thtien").innerHTML=nf.format(tongtien)+"₫";
+       
+        function countSumMoney(){
+            var thanhtien=document.getElementsByClassName("tongtien");
+
+            var summoney=0;
+            for(var i=0;i<thanhtien.length;i++){
+                var mn=convertMoneytoNumber(thanhtien[i].innerText);
+                summoney+=mn;
+            }
+        document.getElementById("thtien").innerText=convertNumbertoMoney(summoney);
+         
+        }
+        function thaydoisl(obj){
+            var gia=obj.previousSibling;
+            var money=obj.nextSibling;
+            var giaBan=gia.lastChild.innerText;
+            var giaban=convertMoneytoNumber(giaBan);
+            var t=giaban*obj.value;
+            money.innerText=convertNumbertoMoney(t);
+            countSumMoney();
+        }
+      
+        
+    
+
+
+        function convertNumbertoMoney(number){
+            return nf.format(number)+"₫";
+        }
+        function convertMoneytoNumber(string){
+            var s=string.slice(0,string.length-1);
+            var number=Number(string.replace(/[^0-9\.]+/g,""));
+            return number;
+        }
+
+        function deleteItems(obj){
+            var row=obj.parentElement.parentElement;
+            var tenspxoa=row.childNodes[1].innerText;
+            xoaSPDuoiLocalStorage(tenspxoa);
+           xoa_sp_duoi_local_storage(tenspxoa);
+            document.getElementById("items").removeChild(row);
+            countSumMoney();
+            check();
+        }
+        function xoaSPDuoiLocalStorage(string){
+            for(var i=0;i<mangsl.length;i++){
+                if(products[mangsl[i].ob].name==string){
+                    mangsl.splice(i,1);
+                }
+            }
+            var jsongiohang = JSON.stringify(mangsl);
+            localStorage.setItem("danhsanpham",jsongiohang);
+        }
+        function xoa_sp_duoi_local_storage(string){
+            for(var i=0;i<mangdssp.length;i++){
+                if(mangdssp[i].name==string){
+                    mangdssp.splice(i,1);
+                }
+            }
+            var jsongiohangbd = JSON.stringify(mangdssp);
+            localStorage.setItem("giohang",jsongiohangbd);
+        }
+        function check(){
+            if(document.getElementById("thtien").innerHTML=="0₫"){
+                document.getElementById("alert").style.display="block";
+             document.getElementById("btndathang").setAttribute("disabled","true")
+          }
+          else{
+              document.getElementById("alert").style.display="none";
+          }
+        }
+        check();
+        
+    </script>
+    
+</body>
+</html>

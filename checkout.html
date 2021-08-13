@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin thanh toán</title>
+    <link rel="stylesheet" href="./css/style2.css">
+    <link rel="stylesheet" href="./font/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div class="main">
+        <div class="nav">
+            <div class="back">
+      
+                <a href="./cart.html" onclick=" xoaDuLieuLocal()">
+                <i class="ti-arrow-left">
+                </i>
+            </a>
+               
+            </div>
+        <div class="logo">
+            <img src="./img/your-logo.png" alt="" width="11%" onclick="location.href='./index.html'">
+
+        </div>
+        </div>
+
+    <div class="content">
+        <form action="thanhtoan.php" name="myForm" method="post" onsubmit="return checkform();">
+
+            <div class="contact">
+                <div class="contact-main">
+                    <div class="thong-tin-nhan-hang">
+                        <h3>
+                            <i class="ti-location-pin"></i>
+                            Thông tin nhận hàng
+                        </h3>
+                        
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                
+                                <input  type="email" name="email" id="email" placeholder="Nhập email" onkeyup="an(this,1)">
+                                <div class="alert" id="alert1"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Họ và tên</label>
+                                
+                                <input type="text" name="hoten" id="hoten" placeholder="Vui lòng nhập họ tên" onkeyup="an(this,2)">
+                                <div class="alert" id="alert2"></div>
+                           
+                            </div>
+                            <div class="form-group">
+                                <label for="">Khu vực</label>
+                                
+                                <select name="kv" id="kv" onclick="an(this,3)">
+                                    <option value="">Vui lòng chọn</option>
+                                    <option value="1">Hồ Chí Minh - Quận Thủ Đức</option>
+                                    <option value="2">Hà Nội - Huyện Thanh Trì</option>
+                                    <option value="3">Đà Nẵng - Quận Sơn Trà</option>
+                                    <option value="4">Nghệ An - Huyện Quỳnh Lưu</option>
+                                </select>
+                                <div class="alert"id="alert3"></div>
+                          
+                            </div>
+                            <div class="form-group">
+                                <label for="">Phường/ Xã</label>
+                                
+                                <select name="px" id="px" onclick="an(this,4)">
+                                    <option value="" style="color: #ccc;">Chọn Phường/ Xã</option>
+                                    <option value="1">Hiệp Bình Phướng</option>
+                                    <option value="2">Xã Linh Niên</option>
+                                    <option value="3">Xã Kiên Tâm</option>
+                                    <option value="4">Xã Quỳnh Thanh</option>
+                                    </select>
+                                    <div class="alert" id="alert4"></div>
+                            
+                                </div>
+                            <div class="form-group">
+                                <label for="">Địa chỉ</label>
+                                
+                                <input type="text" name="dc" id="dc" placeholder="Số nhà + tên đường"onkeyup="an(this,5)">
+                                <div class="alert" id="alert5"></div>
+                            
+                            </div>
+                            <div class="form-group">
+                                <label for="">Số điện thoại nhận hàng</label>
+                              
+                                <input type="tel" name="sdt" id="sdt" placeholder="Nhập số điện thoại di động"onkeyup="an(this,6)">
+                                <div class="alert" id="alert6"></div>
+                           
+                            </div>
+                            <div class="form-group">
+                                <label for="">Ghi chú</label>
+                               
+                                <textarea name="ghichu" id="ghichu" cols="30" rows="3" placeholder="Nhập ghi chú (nếu có)"></textarea>
+                                <div class="alert" id="alert7"></div>
+                            </div>
+                        <!-- </form> -->
+                    </div>
+                    <div class="van-chuyen-thanh-toan">
+                        <h3>
+                            <i class="ti-credit-card"></i>
+                            Vận chuyển & Thanh toán
+                        </h3>
+                        <div class="van-chuyen">
+                            <h4>
+                                Hình thức vận chuyển
+                              
+                            </h4>
+                            
+                                <div class="form-group">
+                                    <input type="radio" name="ptvanchuyen" id="" checked onclick="thaydoiptvanchuyen(true)"> <label for="">Giao hàng trong 48 giờ: <strong>0đ</strong></label>
+    
+                                </div>
+                            
+                            <div class="form-group">
+                                <input type="radio" name="ptvanchuyen" id="" onclick="thaydoiptvanchuyen(false)"> <label for="">
+                                    [NowFree] Giao hàng nhanh trong 2 giờ (Trễ tặng 100k): <strong> 20,000 đ</strong>
+                                </label>
+                            </div>
+                           
+                          
+                            
+                        </div>
+                        <div class="thanh-toan">
+                            <h4>Phương thức thanh toán</h4>
+                            <div class="form-group">
+    
+                                <input type="radio" name="ptthanhtoan" id="" checked onclick="hienthipttt(false)"> <label for="">Thanh toán tiền khi nhận hàng (COD)</label>
+                            </div>
+                            <div class="form-group">
+    
+                                <input type="radio" name="ptthanhtoan" id=""onclick="hienthipttt(true)"> 
+                                <label for="">
+                                    Thanh toán trực tuyến (Internet Banking, VNPAY-QR, Ví điện tử VNPAY, Visa - Miễn phí thanh toán)
+                                </label>
+                            </div>
+                            <div class="phuong-thuc" id="phuong-thuc">
+                                <h5>
+                                    Các phương thức thanh toán qua VNPAY
+    
+                                </h5>
+                                    
+                                    <div class="items-phuong-thuc">
+                                        <div class="item-phuong-thuc">
+                                            <div class="img-phuongthuc">
+                                                <img src="./img/vnpay1.png" alt="">
+                                            </div>
+                                            <div class="info-bank1">Ứng dụng Mobile Banking quét mã VNPAY-QR</div>
+                                            
+                                        </div>
+                                        <div class="item-phuong-thuc">
+                                            <div class="img-phuongthuc">
+                                                <img src="./img/vnpay2.png" alt="">
+                                            </div>
+                                            <div class="info-bank2">Thẻ ATM và tài khoản ngân hàng</div>
+                                            
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="thong-tin-xuat-hoa-don">
+                        <h3>
+                            <input type="checkbox" name="" id="xuathoadon" onclick="daott()" >
+                            Thông tin xuất hóa đơn
+                            <span>(Quý khách cần xuất hoá đơn mua hàng, vui lòng nhập thông tin tại đây)</span>
+                            
+                        </h3>
+                        
+                        <div class="thong-tin-chinh" id="thongtinchinh">
+                            
+                            <input type="text" name="" id="" onblur="fblur(this,1)" onkeyup="fkeyup(this,1)" placeholder="Nhập email nhận hóa đơn">
+                            <p class="loi" id="loi1">Vui lòng nhập địa chỉ email</p>
+                            <input type="text" name="" id="" onblur="fblur(this,2)" onkeyup="fkeyup(this,2)" placeholder="Nhập tên công ty">
+                            <p class="loi" id="loi2">Vui lòng nhập tên công ty</p>
+                            <input type="text" name="" id="" onblur="fblur(this,3)" onkeyup="fkeyup(this,3)" placeholder="Nhập mã số thuế">
+                            <p class="loi" id="loi3">Vui lòng nhập mã số thuế</p>
+                            <textarea name="" id="" cols="30" rows="5" onblur="fblur(this,4)" onkeyup="fkeyup(this,4)" placeholder="Nhập địa chỉ công ty (bao gồm Phường/Xã, Quận/Huyện, Tỉnh/Thành phố nếu có)"></textarea>
+                            <p class="loi" id="loi4">Vui lòng nhập địa chỉ công ty</p>
+                            </textarea>
+                            <b style="display: block; margin-top: 10px;">Lưu ý</b>
+                            <ul>
+                                <li>
+                                    Để trống mã số thuế đối với Công ty không có mã số thuế
+                                </li>
+                                <li>
+                                    Không xuất hóa đơn cho các đơn hàng có sử dụng các loại phiếu quà tặng (Mobile Gift, Got it)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="tienhanhdathang">
+                <h3>
+                    <i class="ti-shopping-cart-full"></i>
+                    Đơn hàng</h3>
+              
+
+                <div class="items" id="items">
+                        
+                </div>
+                <div class="tamtinh-giamgia">
+    
+                    <div class="tam-tinh">
+                        <span class="tamtinh">Tạm tính:</span>
+                        <span class="giatamtinh" id="tamtinh">0đ</span>
+                    </div>
+                    <div class="tam-tinh">
+                        <span class="tamtinh">Giảm giá:</span>
+                        <span class="giatamtinh" id="giamgia">0đ</span>
+                    </div>
+                </div>
+                <div class="phivanchuyen">
+                    <span class="pvc">Phí vận chuyển:</span>
+                    <span class="giapvc" id="giapvc"></span>
+                </div>
+                <div class="thanh-tien">
+                    <div class="tt">
+                        <p>
+                            Thành tiền:
+    
+                        </p>
+                        <p style="font-size: 13px;">
+                            (Đã bao gồm VAT)
+                        </p>
+                    </div>
+                    <div class="thanhtien">
+                        <strong id="thanhtien"></strong>
+                    </div>
+                    
+                </div>
+                <input type="submit" id=""class="dathang"  value="ĐẶT HÀNG">
+            </div>
+            <div class="clean"></div>
+        </form>
+    </div>
+
+    </div>
+    <script src="./js/checkout.js"></script>
+    <script>
+        var nf=new Intl.NumberFormat();
+         document.getElementById("phuong-thuc").style.display="none";
+         document.getElementById("giapvc").innerText= "0₫";
+         // hiện phí vận chuyển
+        function thaydoiptvanchuyen(boolean){
+           document.getElementById("giapvc").innerText=(boolean==true) ? "0₫":"20,000₫"
+           tongsthanhtoan();
+        }
+        // hiện thị phương thức thanh toán
+        function hienthipttt(boolean){
+          document.getElementById("phuong-thuc").style.display=(boolean==true) ? "block": "none"; 
+          }
+          // xóa dữ liệu sp đã mua dưới local
+        function xoaDuLieuLocal(){
+          localStorage.removeItem("spdamua");
+         }
+         // chuyển số thành money đ 
+        function convertNumbertoMoney(number){
+            return nf.format(number)+"₫";
+        }
+        // chuyên money đ thành tiền
+        function convertMoneytoNumber(string){
+            var s=string.slice(0,string.length-1);
+            var number=Number(string.replace(/[^0-9\.]+/g,""));
+            return number;
+        }
+    // Load sp lên từ local 
+    var handle = document.getElementById("items");
+    var mangspdachon=JSON.parse(localStorage.getItem("spdamua"));
+    var tong1=0;
+    var tong2=0;
+            for(var i=0;i<mangspdachon.length;i++) {
+                var sp=new spdachon(mangspdachon[i].giamgia,mangspdachon[i].tensp,mangspdachon[i].photo,mangspdachon[i].soluong,mangspdachon[i].tienthanhtoan);
+                sp.showds(handle);
+                tong1+=mangspdachon[i].giamgia;
+                tong2+=convertMoneytoNumber(mangspdachon[i].tienthanhtoan);
+            }
+            document.getElementById("giamgia").innerText=convertNumbertoMoney(tong1);
+            document.getElementById("tamtinh").innerText=convertNumbertoMoney(tong2);
+
+        function tongsthanhtoan(){
+            var giapvc=document.getElementById("giapvc").innerText;
+            var phivc=convertMoneytoNumber(giapvc);
+            document.getElementById("thanhtien").innerText=convertNumbertoMoney(tong2+phivc);
+        }
+        tongsthanhtoan();
+   // kiểm tra form
+   function checkform(){
+    var thanhcong=true;
+        if(document.forms["myForm"]["email"].value==""){
+            document.getElementById("alert1").innerText="Vui lòng bổ sung thông tin.";
+            document.getElementById("alert1").style.display="block";
+            document.forms["myForm"]["email"].style.borderColor="red";
+            thanhcong=false;
+        }
+        else{
+            // regex đề fix lỗi nhập email sai
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+            if(filter.test(document.forms["myForm"]["email"].value)==false) {
+            document.getElementById("alert1").innerText="Vui lòng nhập địa chỉ email hợp lệ.";
+            document.getElementById("alert1").style.display="block";
+            document.forms["myForm"]["email"].style.borderColor="red";
+            thanhcong=false;
+            }
+        }
+        //hoten
+        // hàm kiểm tra họ tên có chưa số ko
+        function test(string){
+           for(var i=0;i<string.length;i++){
+                if(string[i]=='0'||string[i]=='1'||string[i]=='2'||string[i]=='3'||string[i]=='4'||
+                string[i]=='5'||string[i]=='6'||string[i]=='7'||string[i]=='8'||string[i]=='9'){
+                    return false;
+                }
+            }
+            return true;
+        }   
+      
+    if(document.forms["myForm"]["hoten"].value==""){
+        document.getElementById("alert2").innerText="Vui lòng nhập đầy đủ họ tên.";
+            document.getElementById("alert2").style.display="block";
+            document.forms["myForm"]["hoten"].style.borderColor="red";
+            thanhcong=false;
+    }
+    else{
+        
+        if(test(document.forms["myForm"]["hoten"].value)==false) {
+            document.getElementById("alert2").innerText="Vui lòng họ tên hợp lệ.";
+            document.getElementById("alert2").style.display="block";
+            document.forms["myForm"]["hoten"].style.borderColor="red";
+            thanhcong=false;
+        }
+    }
+    // khuvuc
+    if(document.forms["myForm"]["kv"].value==""){
+        document.getElementById("alert3").innerText="Vui lòng bổ sung thông tin.";
+            document.getElementById("alert3").style.display="block";
+            document.forms["myForm"]["kv"].style.borderColor="red";
+            thanhcong=false;
+    }
+    if(document.forms["myForm"]["px"].value==""){
+        document.getElementById("alert4").innerText="Vui lòng bổ sung thông tin.";
+            document.getElementById("alert4").style.display="block";
+            document.forms["myForm"]["px"].style.borderColor="red";
+            thanhcong=false;
+    }
+    // 
+    if(document.getElementById("dc").value==""){
+        document.getElementById("alert5").innerText="Vui lòng bổ sung thông tin.";
+            document.getElementById("alert5").style.display="block";
+            document.getElementById("dc").style.borderColor="red";
+            thanhcong=false;
+    }
+    if(document.getElementById("sdt").value==""){
+        document.getElementById("alert6").innerText="Vui lòng bổ sung thông tin.";
+            document.getElementById("alert6").style.display="block";
+            document.getElementById("sdt").style.borderColor="red";
+            thanhcong=false;
+    }
+    else{
+        var filter = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+        if(filter.test(document.getElementById("sdt").value)==false){
+            document.getElementById("alert6").innerText="Vui lòng nhập số điện thoại hợp lệ.";
+            document.getElementById("alert6").style.display="block";
+            document.getElementById("sdt").style.borderColor="red";
+            thanhcong=false;
+        }
+    }
+    if(document.getElementById("ghichu").value==""){
+        document.getElementById("alert7").innerText="Vui lòng bổ sung thông tin.";
+            document.getElementById("alert7").style.display="block";
+            document.getElementById("ghichu").style.borderColor="red";
+            thanhcong=false;
+    }
+   
+  return thanhcong;
+   }
+   // ẩn lỗi khi nhập đúng
+   function an(input,x) {
+    if(input.value!="") {
+        if(x==1) 
+        {
+            input.style.borderColor="#ccc";
+            document.getElementById("alert1").style.display="none";
+    }
+        if(x==2) 
+        {
+            input.style.borderColor="#ccc";
+            document.getElementById("alert2").style.display="none";
+
+        }
+        if(x==3) 
+        {
+            input.style.borderColor="#ccc";
+            document.getElementById("alert3").style.display="none";
+
+        }
+        if(x==4) 
+        {
+            input.style.borderColor="#ccc";
+            document.getElementById("alert4").style.display="none";
+
+        }
+        if(x==5) 
+        {
+            input.style.borderColor="#ccc";
+            document.getElementById("alert5").style.display="none";
+
+        }
+        if(x==6) 
+        {
+            input.style.borderColor="#ccc";
+            document.getElementById("alert6").style.display="none";
+
+        }
+       
+    }
+    
+}
+    // xử lí sự kiện trên thông tin đặt hàng
+    function daott(){
+     var kt=document.getElementById("xuathoadon").checked;
+     document.getElementById("thongtinchinh").style.display=(kt==true) ? "block" : "none";
+    }
+    //
+
+    function fblur(input,x) {   
+        if(input.value==""){
+            if(x==1){
+                document.getElementById("loi1").style.display="block";
+                
+            }
+            if(x==2){
+                document.getElementById("loi2").style.display="block";
+            }
+            if(x==3){
+                document.getElementById("loi3").style.display="block";
+            }
+            if(x==4){
+                document.getElementById("loi4").style.display="block";
+            }   
+        }
+
+    }
+    function fkeyup( input ,x){
+        if(input.value!=""){
+            if(x==1){
+                document.getElementById("loi1").style.display="none";
+                
+            }
+            if(x==2){
+                document.getElementById("loi2").style.display="none";
+            }
+            if(x==3){
+                document.getElementById("loi3").style.display="none";
+            }
+            if(x==4){
+                document.getElementById("loi4").style.display="none";
+            }   
+        }
+    }
+    </script>
+</body>
+</html>

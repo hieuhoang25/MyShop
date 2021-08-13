@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin tức</title>
+    <link rel="stylesheet" href="./css/style3.css">
+    <link rel="stylesheet" href="./font/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div class="main">
+        <div class="nav">
+            <img src="./img/your-logo.png" title="Trang chủ" onclick="location.href='./index.html'" alt="" width="11%">
+            <ul>
+                <li class="sb"><a href="./index.html">Trang chủ</a></li>
+                <li class="sb"><a href="#products">Sản phẩm</a></li>
+                <li class="sb"><a href="./news.html"  style="border-bottom: 2px solid rgba(0, 0, 0, 0.5);">Tin Tức</a></li>
+                <li class="sb"><a href="./dovui.html">Đố vui</a></li>
+                <li class="sbcart">
+                    <a href="./cart.html" title="giỏ hàng">
+                        <i class="ti ti-shopping-cart"></i>
+                       
+                    </a>
+                </li>
+                <li class="dn">
+                    <a href="">ĐĂNG NHẬP</a>
+                </li>
+                <li class="dk">
+                    <a style="color: #fff;" href="">ĐĂNG KÝ</a>
+
+                </li>
+            </ul>
+            <span id="sl" class="sl">
+                0
+            </span>
+        </div>
+        <div class="container">
+            <h1>Tin Mới</h1>
+            <div class="news" id="news">
+               
+            </div>
+        </div>
+
+
+    </div>
+    <div class="footer">
+        <div class="sub-info">
+            <div class="shiper">
+                <img src="./img/run.png" alt="">
+                <div class="shiper-text">
+                    <h2>Giao hàng Miễn phí</h2>
+                    <p>Với các đơn hàng từ 
+                        
+                        500.000đ 
+                    trở lên</p>
+                </div>
+            </div>
+            <div class="shiper">
+                <img src="./img/git.png" alt="">
+                <div class="shiper-text">
+                    <h2>Quà tặng & Bao bì</h2>
+                    <p>Chúng tôi có mức giá áp dụng cho gói quà đặc biệt với giá trị tuyệt vời! Tuyệt vời không phải là không đáng tin cậy trong nền kinh tế thị trường tự do. Danh từ bố trí trong danh mục đầu tư, đường kính không phải là không có trong euismod tincidunt.</p>
+                </div>
+            </div>
+        </div>
+        <div class="icon">
+            <div class="iconmain">
+
+                <i class="ti-youtube"></i>
+                <i class="ti-facebook"></i>
+                <i class="ti-instagram"></i>
+                <i class="ti-google"></i>
+            </div>
+            <div class="copyright">
+                Copyrights © 2021 by <strong>Hiếu Laptop</strong>. All rights reserved.
+             </div>
+        </div>
+
+    </div>
+    <script src="./js/cart.js"></script>
+    <script src="./js/new_modal.js"></script>
+    <script src="./js/news.js"></script>
+    <script>
+        var handle=document.getElementById("news");
+        for(var i=0; i<news.length; i++) {
+            var n =new New(news[i].photo, news[i].heading, news[i].title, news[i].date);
+            n.show(handle);
+        }
+    </script>
+</body>
+</html>

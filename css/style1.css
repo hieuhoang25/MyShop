@@ -1,0 +1,269 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+body {
+    background-color: #f5f5f5;
+}
+.main .nav{
+    display: flex;
+    background-color: #faf9fb;
+    box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px, rgb(0 0 0 / 8%) 0px 4px 12px;
+    
+}
+
+.nav img{
+    margin-left: 50px;
+}
+.nav img:hover{
+    cursor: pointer;
+}
+.nav ul{
+    margin-left: 285px;
+}
+.nav ul li{
+    display: inline-block;
+    margin: 0px 15px;
+}
+.dk a{
+    background-color: #f26d50;
+    
+}
+.nav ul li a{
+    
+    line-height: 71.583px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    padding: 7px 10px;
+}
+.nav ul li:last-child{
+    margin-left: 0px;
+}
+.nav ul .dn{
+    margin-right: 2px;
+}
+.dn a, .dk a{
+    border-radius: 5px;
+}
+.sb a:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.sbcart a i{
+    padding: 8px;
+    background-color: rgba(255, 0, 0, 0.637);
+    border-radius: 100%;
+    color: #fff;
+}
+  
+
+  
+/*  */
+.main .taskbar{
+  
+    padding: 14px;
+    background-color: #fff;
+  
+       box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+ 
+       border: 1px solid rgba(34,36,38,.15);
+       border-radius: 5px;
+       width: 80%;
+       margin: 0 auto;
+       margin-top: 14px;
+}
+ .taskbar .icon-home{
+    color: #4183C4;
+   margin: 0px 10px 0px 8px;
+   
+}
+.taskbar .icon-home:hover{
+    cursor: pointer;
+    color: #f7d2b7;
+}
+.taskbar .icon-right{
+    font-size: 11px;
+    margin-right: 10px;
+}
+/* content */
+
+.gio-hang{
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px #ddd;
+    padding: 20px;
+    margin: auto;
+    max-width: 1000px;
+    background-color: #fff;
+}
+.gio-hang-heading{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.item-gio-hang{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+}
+.item-gio-hang .hinhanh img{
+    width: 60px;
+    height: 60px;
+}
+.item-gio-hang .hinhanh, .soluong,.tongtien,.hanhdong{
+    flex: 1;
+    margin-left:15px;
+}
+.item-gio-hang .gia{
+    flex: 2;
+}
+.item-gio-hang .ten{
+    flex: 3;
+}
+.item-gio-hang .gia .giaGoc{
+    font-size: 14px;
+    text-decoration: line-through;
+    color: red;
+   
+}
+.item-gio-hang .gia .giaBan{
+    margin-left: 5px;
+}
+.item-gio-hang .hanhdong i:hover{
+    color: red;
+    cursor: pointer;
+}
+.item-gio-hang input{
+    padding: 5px;
+    border: 1px solid #ddd;
+    width: 140px;
+}
+.gio-hang-heading .item-gio-hang .soluong{
+    margin-left: 0px;
+}
+.clean{
+    clear: both;
+}
+.control {
+    width: 1000px;
+    margin: auto;
+}
+.tieptucmuahang{
+    float: left;
+    margin-left: 20px;
+    margin-top: 40px;
+
+}
+.countmoney{
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.tieptucmuahang a{
+    color: #000;
+    text-decoration: none;
+}
+.tieptucmuahang a:hover{
+    text-decoration: underline;
+    color: red;
+}
+
+.countmoney .thanhtien strong{
+ margin-left: 8px;
+ color: saddlebrown;
+}
+.countmoney .vat{
+    margin-left: 20px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+.countmoney .btndathang button{
+    background-color: #ff6600;
+    font-weight: 600;
+    padding: 8px 10px;
+    border: none;
+    color: #fff;
+    margin-top: 5px;
+}
+/* footer */
+.footer{
+    background-color: #fff;
+    min-height: 250px;
+    position: relative;
+    margin-top: 150px;
+}
+.footer .sub-info{
+    position: absolute;
+    top: -66px;
+    left: 140px;
+    width: 978px;
+    height: 132px;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 1px solid #d7d4d4;
+    box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px, rgb(0 0 0 / 8%) 0px 4px 12px;
+
+}
+.footer .sub-info .shiper{
+    width: calc(100%/2);
+    float: left;
+   
+}
+.sub-info .shiper .shiper-text{
+    margin-top: 23px;
+}
+.sub-info .shiper h2{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.sub-info .shiper p{
+    font-size: 12px;
+}
+.sub-info .shiper img{
+    float: left;
+    border: 2px solid #e2e2e2;
+    border-radius: 100px;
+    margin: 30px ;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .icon{
+    text-align: center;
+}
+.footer .icon i{
+    font-size: 20px;
+    margin: 5px;
+}
+.footer .icon .iconmain{
+    margin-top: 85px;
+}
+.footer .icon .copyright{
+    margin-top: 20px;
+}
+.btndathang button:hover{
+    cursor: pointer;
+}
+.btndathang button:disabled{
+    background-color: #ccc;
+}
+.gio-hang .alert{
+    text-align: center;
+}
+.gio-hang .alert p{
+    line-height: 1.15;
+   
+}

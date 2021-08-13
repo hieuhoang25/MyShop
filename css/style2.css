@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Roboto Condensed', sans-serif;
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #f5f5f5;
+}
+.main .nav{
+    display: flex;
+    background-color: #faf9fb;
+    box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px, rgb(0 0 0 / 8%) 0px 4px 12px;
+}
+.main .nav .logo{
+    text-align: center;
+    width: 95%;
+}
+.nav .back i{
+    line-height: 71.583px;
+    font-size: 30px;
+   
+    padding: 5px;
+    margin-left: 10px;
+}
+.nav .back a{
+    text-decoration: none;
+}
+.nav .logo img:hover{
+    cursor: pointer;
+}
+.nav .back i:hover{
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+}
+.content{
+    width: 80%;
+    margin: 0px auto;
+
+    background-color: #fff;
+    margin-top: 15px;
+    padding: 12px;
+}
+.content .contact{
+    width: 60%;
+   
+    float: left;
+}
+.content .tienhanhdathang{
+    width: 38%;
+    float: right;
+}
+.clean{
+    clear: both;
+}
+.contact .contact-main{
+ 
+}
+.contact-main .alert{
+    margin-top: 1px;
+    color: #e02b27;
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 400;
+    display: none;
+}
+.contact-main .thong-tin-nhan-hang{
+    border-top: 3px solid #8bbea5;
+           
+        border-left: 1px solid #c9d0cd;
+        border-right: 1px solid #c9d0cd;
+        border-bottom: 1px solid #c9d0cd;
+        padding: 0px 10px;
+        border-radius: 5px;
+        padding-bottom: 40px;
+    
+}
+.contact-main .thong-tin-nhan-hang h3{
+    padding: 15px 0px;
+    border-bottom: 1px solid #c9d0cd;
+    color: #40E0D0	;
+}
+.thong-tin-nhan-hang .form-group input
+,.thong-tin-nhan-hang .form-group select
+,.thong-tin-nhan-hang .form-group textarea{
+    width: 100%;
+    padding: 8px 7px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    outline: none;
+}
+.thong-tin-nhan-hang .form-group{
+    margin: 10px 0px;
+    height:68px;
+}
+.thong-tin-nhan-hang .form-group label{
+    font-weight: 600;
+    font-size: 14px;
+    display: block;
+    margin: 10px 0px 8px 0px;
+}
+.thong-tin-nhan-hang .form-group input:focus
+,.thong-tin-nhan-hang .form-group select:focus
+,.thong-tin-nhan-hang .form-group textarea:focus{
+    box-shadow: 0px 0px 5px #87CEFA;
+}
+/*  */
+.contact-main .van-chuyen-thanh-toan{
+    margin-top: 20px;
+    padding: 0px 10px;
+    border: 1px solid #8B4513;
+    border-radius: 5px;
+}
+.van-chuyen-thanh-toan h3{
+    padding: 15px 0px;
+    border-bottom: 1px solid #c9d0cd;
+    color: #DAA520	;
+    border-top:3px solid #DAA520 ;
+}
+.van-chuyen-thanh-toan .van-chuyen,
+.van-chuyen-thanh-toan .thanh-toan{
+    margin: 10px 0px;
+    
+}
+.van-chuyen ,.thanh-toan{
+    padding: 0px 10px;
+}
+.van-chuyen h4,
+.thanh-toan h4{
+    margin: 5px 0px;
+}
+.van-chuyen {
+    border-bottom: 1px solid #DAA520;
+}
+.van-chuyen .form-group,
+.thanh-toan .form-group{
+    margin: 6px 0px;
+}
+.van-chuyen .form-group label,
+.thanh-toan .form-group label{
+   font-weight: 400;
+   font-size: 14px;
+}
+.van-chuyen {
+    padding-bottom: 20px;
+}
+.thanh-toan .phuong-thuc{
+    padding: 10px;
+}
+.phuong-thuc .item-phuong-thuc img{
+    width: 50px;
+
+}
+.phuong-thuc{
+    border: 1px solid #c9d0cd;
+}
+.items-phuong-thuc{
+    margin: 10px;
+    position: relative;
+}
+.item-phuong-thuc .img-phuongthuc{
+   
+}
+.item-phuong-thuc .info-bank2{
+    position: absolute;
+    top: 75px;
+    left: 60px;
+    font-weight: 400;
+    font-size: 14px;
+}
+.item-phuong-thuc .info-bank1 {
+    position: absolute;
+    top: 15px;
+    left: 60px;
+    font-weight: 400;
+    font-size: 14px;
+}
+.content .tienhanhdathang{
+    border-top: 3px solid #CD5C5C;
+           
+    border-left: 1px solid #c9d0cd;
+    border-right: 1px solid #c9d0cd;
+    border-bottom: 1px solid #c9d0cd;
+    padding: 0px 10px;
+    border-radius: 5px;
+    padding-bottom: 5px;
+}
+.content .tienhanhdathang img{
+    width: 60px;
+}
+.tienhanhdathang h3{
+    padding: 15px 0px;
+    border-bottom: 1px solid #c9d0cd;
+    color: #CD5C5C	;
+}
+.tienhanhdathang .items{
+    margin-top: 10px;
+   
+}
+.tienhanhdathang .items .item{
+    display: flex;
+    border-bottom: 1px dotted #ccc ;
+    padding: 7px;
+}
+.items .tensp-soluong{
+    width: 54%;
+    margin-left: 10px;
+}
+.items .item .tiensp{
+    text-align: right;
+    width: 23%;
+}
+
+.tam-tinh {
+    display: flex;
+    font-size: 15px;
+    margin: 8px 0px;
+}
+.tamtinh-giamgia{
+    border-bottom: 1px dotted #c9d0cd;
+   
+}
+.tam-tinh .tamtinh{
+    width: 30%;
+}
+.tam-tinh .giatamtinh{
+    width: 66%;
+    text-align: right;
+}
+
+.phivanchuyen{
+    display: flex;
+    padding: 10px 0px;
+    border-bottom: 1px dotted #c9d0cd;
+}
+.phivanchuyen .giapvc{
+    width: 66%;
+    text-align: right;
+}
+.phivanchuyen .pvc{
+    width: 30%;
+}
+.thanh-tien {
+    display: flex;
+    padding: 10px 0px;
+}
+.thanh-tien .tt{
+    width: 32%;
+}
+.thanh-tien .thanhtien{
+    width: 64%;
+    text-align: right;
+    color: #fe6700;
+}
+.dathang{
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid #fe6700;
+    color: #fff;
+    background: #fe6700;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 7px 10px;
+    margin-bottom: 5px;
+}
+.dathang:hover{
+    cursor: pointer;
+    background-color: #CD5C5C;
+    
+}
+.thong-tin-xuat-hoa-don h3{
+    padding: 15px 0px;
+    border-bottom: 1px solid #c9d0cd;
+    color: #3ec500;
+    border-top: 3px solid #3ec500;
+}
+.thong-tin-xuat-hoa-don{
+    margin-top: 20px;
+    padding: 0px 10px;
+    border: 1px solid #8B4513;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+.thong-tin-chinh  input, .thong-tin-chinh textarea{
+    width: 100%;
+    padding: 8px 7px;
+    border: 1px solid #e02b27;
+    border-radius: 5px;
+    outline: none;
+    margin: 10px 0px;
+
+}
+.thong-tin-chinh ul{
+    margin-left: 15px;
+    font-size: 15px;
+}
+.thong-tin-chinh{
+ display: none;
+}
+.thong-tin-xuat-hoa-don h3 span{
+    display:block;
+    color: #e02b27;
+    font-size: 14px;
+    font-weight:500;
+}
+.thong-tin-chinh .loi{
+     font-size:14px;
+        color: #e02b27;
+        margin:-6px 0px;
+        display: none;
+    }
